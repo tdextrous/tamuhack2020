@@ -30,14 +30,14 @@ export const FlightList = ({
       </Row>
       <Row>
         <Col>
-          <Table>
+          <Table responsive hover> 
             <thead className="thead-dark">
               <tr>
                 <th>Flight Number</th>
                 <th>Origin</th>
                 <th>Destination</th>
-                <th>Arrival Time</th>
                 <th>Departure Time</th>
+                <th>Arrival Time</th>
                 <th>Duration</th>
                 <th></th>
               </tr>
@@ -48,8 +48,8 @@ export const FlightList = ({
                   <td>{flight.flightNumber}</td>
                   <td>{flight.origin.code}</td>
                   <td>{flight.destination.code}</td>
-                  <td>{new Date(flight.arrivalTime).toLocaleTimeString('en-US')}</td>
                   <td>{new Date(flight.departureTime).toLocaleTimeString('en-US')}</td>
+                  <td>{new Date(flight.arrivalTime).toLocaleTimeString('en-US')}</td>
                   <td>{flight.duration.locale}</td>
                   <td>
                     <Link to={`/flights/${flight.flightNumber}`}>

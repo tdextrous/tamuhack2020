@@ -51,7 +51,7 @@ export const FlightDetail = ({
       </Row>
       <Row>
         <Col>
-          <Table>
+          <Table responsive hover>
             <thead className="thead-dark">
               <tr>
                 <th>Tag Number</th>
