@@ -3,8 +3,8 @@ export const calculateDuration = (arrivalTime, departureTime) => {
  const departureDateTime = new Date(departureTime);
  const timeDiff = departureDateTime - arrivalDateTime;
 
- const hours =  Math.floor((timeDiff % 86400000) / 3600000);
- const minutes = Math.round(((timeDiff % 86400000) % 3600000) / 60000);
+ const hours =  Math.abs(Math.floor((timeDiff % 86400000) / 3600000));
+ const minutes = Math.abs(Math.round(((timeDiff % 86400000) % 3600000) / 60000));
  const locale = `${hours}h ${minutes}m`;
 
  return {
