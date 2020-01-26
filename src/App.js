@@ -3,10 +3,12 @@ import {
   Container, Row, Col, Card, CardBody, CardTitle, CardText,
   Nav, Navbar, Collapse, NavLink, NavItem, NavbarBrand, NavbarToggler
 } from 'reactstrap';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom';
 import './App.css';
+import logo from './logo.png';
 import { FlightDetail } from './FlightDetail';
 import { FlightList } from './FlightList';
+import { Home } from './Home';
 import { getAllBags, getAllFlights, getPassengersByFlight, getBagsByPassenger } from './apiHelpers';
 import { sortBagsByLayover, getLayover } from './sorting';
 
@@ -48,7 +50,8 @@ const App = () => {
       <div>
         <Navbar dark expand="lg" className="bg-dark mb-4">
           <NavbarBrand tag={() => (
-            <Link to="/flights" className="navbar-brand display-3 pl-6">
+            <Link to="/" className="navbar-brand display-3 pl-3">
+              {/*<img className="" src={logo} width="250" height="50" />*/}
               LuggageQueue
             </Link>
           )} />
@@ -74,6 +77,9 @@ const App = () => {
               <FlightList 
                 flightDate={flightDate}  
               />
+            )} />
+            <Route path="/" exact render={() => (
+              <Redirect to="/flights" />
             )} />
         </Switch>
       </div>

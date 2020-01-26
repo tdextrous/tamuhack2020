@@ -3,3 +3,18 @@
   width: 95%;
   max-width: 1200px;
 }
+
+.logo {
+  width: 200px;
+  height: 50px;
+}
+
+.background {
+  height: 100vh;
+  width: 100%;
+  background: url('https://cdn.glitch.com/ad257093-7792-4dd9-97e4-a6c5a3174249%2Fglobepic.jpg?v=1580010515480') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
